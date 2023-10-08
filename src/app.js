@@ -7,11 +7,11 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  document.querySelector("#excuse").innerHTML = excusegenerator();
+  document.querySelector("#excuse").innerHTML = excuseGenerator();
 };
-let excusegenerator = () => {
-  let who = ["The dog", "My grandma", "His turtle", "My bird"];
-  let action = ["ate", "peed", "crushed", "broke"];
+const excuseGenerator = () => {
+  let who = ["The dog ", "My grandma ", "His turtle ", "My bird "];
+  let action = ["eat ", "peed ", "crushed ", "broke "];
   let what = ["my homework", "the keys", "the car"];
   let when = [
     "before the class",
@@ -20,20 +20,12 @@ let excusegenerator = () => {
     "during my lunch",
     "while I was praying"
   ];
-
-  let whIndx = Math.floor(Math.random() * who.length);
-  let actIndex = Math.floor(Math.random() * action.length);
-  let whaIndex = Math.floor(Math.random() * what.length);
-  let wheIndex = Math.floor(Math.random() * when.length);
-
+  let whoRandom = Math.floor(Math.random() * who.length);
+  let actionRandom = Math.floor(Math.random() * action.length);
+  let whatRandom = Math.floor(Math.random() * what.length);
+  let whenRandom = Math.floor(Math.random() * when.length);
   return (
-    who[whIndx] +
-    " " +
-    action[actIndex] +
-    " " +
-    what[whaIndex] +
-    " " +
-    when[wheIndex]
+    who[whoRandom] + action[actionRandom] + what[whatRandom] + when[whenRandom]
   );
 };
 let refresh = document.getElementById("refresh");
